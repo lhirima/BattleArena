@@ -11,24 +11,25 @@ namespace BattleArena
     {
         static void Main(string[] args)
         {
-            Warrior Mamamo = new Warrior("Mamamo", 300, 50);
-            Warrior Papamo = new Warrior("Papamo", 10, 1);
-            Warrior Sino = new Warrior("Sino", 100, 20);
+            int round = 1;
+            Warrior Mamamo = new Warrior("Mamamo", 300, 15, "Dinilaan");
+            Warrior Papamo = new Warrior("Papamo", 150, 32, "Sinubo");
+            Warrior Sino = new Warrior("Sino", 200, 20, "Pinwetan");
 
-            Console.WriteLine($"{Mamamo .Name} has " +
-                $"{Mamamo.Health} health and {Mamamo.AttackPower} attack power.");
-            Console.WriteLine("----------------------------------------------");
+            Mamamo.DisplayStatus();
+            Papamo.DisplayStatus();
+            Sino.DisplayStatus();
 
-            Console.WriteLine($"{Papamo.Name} has " +
-                $"{Papamo.Health} health and {Papamo.AttackPower} attack power.");
-            Console.WriteLine("----------------------------------------------");
+            while (Mamamo.IsAlive && Papamo.IsAlive)
+            {
+                Console.WriteLine($"---------------- Round {round}  ----------------");
+                Papamo.Attack(Mamamo);
+                Mamamo.Attack(Papamo);
+                Console.WriteLine("------------------------------------------");
+                round++;
+            }
 
-            Console.WriteLine($"{Sino.Name} has " +
-                $"{Sino.Health} health and {Sino.AttackPower} attack power.");
-            Console.WriteLine("----------------------------------------------");
-
-            Console.ReadLine();
+            Console.ReadKey();
         }
-
     }
 }
