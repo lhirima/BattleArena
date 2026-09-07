@@ -1,9 +1,13 @@
-﻿using BattleArena.Warriors;
+﻿
+using BattleArena.Warriors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using static BattleArena.Warriors.Marksman;
+
 
 namespace BattleArena
 {
@@ -11,10 +15,9 @@ namespace BattleArena
     {
         static void Main(string[] args)
         {
-            int round = 1;
-            Warrior Mamamo = new Warrior("Mamamo", 300, 15, "Dinilaan");
-            Warrior Papamo = new Warrior("Papamo", 150, 32, "Sinubo");
-            Warrior Sino = new Warrior("Sino", 200, 20, "Pinwetan");
+            var Mamamo = new Tank("Mamamo", 300, 15, 5);
+            var Papamo = new Marksman("Papamo", 150, 32, 10);
+            var Sino = new Fighter("Sino", 200, 20, 7);
 
             Mamamo.DisplayStatus();
             Papamo.DisplayStatus();
@@ -22,11 +25,13 @@ namespace BattleArena
 
             while (Mamamo.IsAlive && Papamo.IsAlive)
             {
-                Console.WriteLine($"---------------- Round {round}  ----------------");
-                Papamo.Attack(Mamamo);
+                Console.WriteLine("\n\n====================================");
                 Mamamo.Attack(Papamo);
-                Console.WriteLine("------------------------------------------");
-                round++;
+                Thread.Sleep(1000);
+                Papamo.Attack(Mamamo);
+                Thread.Sleep(1000);
+                Console.WriteLine("------------------------------------");
+
             }
 
             Console.ReadKey();

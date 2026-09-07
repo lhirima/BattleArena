@@ -7,29 +7,25 @@ using System.Threading.Tasks;
 
 namespace BattleArena.Warriors
 {
-    public class Fighter : Warrior
+    public class Marksman : Warrior
     {
-        public int SwordDamage;
-        public Fighter(string name, int health, int attackPower, int swordDamage)
+        public int ArrowDamage;
+        public Marksman(string name, int health, int attackPower, int arrowDamage)
             : base(name, health, attackPower)
         {
-            SwordDamage = swordDamage;
         }
 
         public override void Attack(Warrior target)
         {
-            var totalDamage = target.AttackPower + SwordDamage;
+            var totalDamage = target.AttackPower + ArrowDamage;
             TakeDamage(totalDamage);
-            Console.WriteLine($"\t->{Name}: bleed damage {target.Name}!");
+            Console.WriteLine($"\t->{Name}: fire arrow {target.Name}!");
             Thread.Sleep(1000);
-
-            Console.WriteLine($"\t->{target.Name}: eh! ");
+            Console.WriteLine($"\t->{target.Name}: oh! ");
             Thread.Sleep(1000);
-
             if (target.IsAlive)
-                Console.WriteLine($"\t->{target.Name}: revive! ");
+                Console.WriteLine($"\t->{target.Name}: weh ");
             Thread.Sleep(1000);
-
             Console.WriteLine($"\t------- {target.Name} ------");
             Console.WriteLine($"\t    * DamageTaken: {totalDamage}");
             Console.WriteLine($"\t    * Health Remaining: {target.Health}");
