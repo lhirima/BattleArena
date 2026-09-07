@@ -11,23 +11,11 @@ namespace BattleArena
     {
         static void Main(string[] args)
         {
-            Warrior Mamamo = new Warrior();
-            Mamamo.Name = "Mamamo";
-            Mamamo.Health = 300;
-            Mamamo.AttackPower = 50;
+            Warrior Mamamo = new Warrior("Mamamo", 300, 50);
+            Warrior Papamo = new Warrior("Papamo", 10, 1);
+            Warrior Sino = new Warrior("Sino", 100, 20);
 
-            Warrior Papamo = new Warrior();
-            Papamo.Name = "Papamo";
-            Papamo.Health = 200;
-            Papamo.AttackPower = 40;
-
-            Warrior Sino = new Warrior();
-            Sino.Name = "Sino";
-            Sino.Health = 150;
-            Sino.AttackPower = 30;
-
-
-            Console.WriteLine($"{Mamamo.Name} has " +
+            Console.WriteLine($"{Mamamo .Name} has " +
                 $"{Mamamo.Health} health and {Mamamo.AttackPower} attack power.");
             Console.WriteLine("----------------------------------------------");
 
