@@ -21,10 +21,10 @@ namespace BattleArena.Warriors
             TakeDamage(totalDamage);
             Console.WriteLine($"\t->{Name}: fire arrow {target.Name}!");
             Thread.Sleep(1000);
-            Console.WriteLine($"\t->{target.Name}: oh! ");
+            Console.WriteLine($"\t->{target.Name}: ahh! ");
             Thread.Sleep(1000);
             if (target.IsAlive)
-                Console.WriteLine($"\t->{target.Name}: weh ");
+                Console.WriteLine($"\t->{target.Name}: savage ");
             Thread.Sleep(1000);
             Console.WriteLine($"\t------- {target.Name} ------");
             Console.WriteLine($"\t    * DamageTaken: {totalDamage}");

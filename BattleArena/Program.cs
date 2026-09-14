@@ -1,5 +1,4 @@
-﻿
-using BattleArena.Warriors;
+﻿using BattleArena.Warriors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,20 +14,20 @@ namespace BattleArena
     {
         static void Main(string[] args)
         {
-            var Mamamo = new Tank("Mamamo", 300, 15, 5);
-            var Papamo = new Marksman("Papamo", 150, 32, 10);
-            var Sino = new Fighter("Sino", 200, 20, 7);
+            var mamamo = new Tank("mamamo", 300, 15, 5);
+            var papamo = new Marksman("papamo", 150, 32, 10);
+            var sino = new Fighter("sino", 200, 20, 7);
 
-            Mamamo.DisplayStatus();
-            Papamo.DisplayStatus();
-            Sino.DisplayStatus();
+            mamamo.DisplayStatus();
+            papamo.DisplayStatus();
+            sino.DisplayStatus();
 
-            while (Mamamo.IsAlive && Papamo.IsAlive)
+            while (mamamo.IsAlive && sino.IsAlive)
             {
                 Console.WriteLine("\n\n====================================");
-                Mamamo.Attack(Papamo);
+                mamamo.Attack(sino);
                 Thread.Sleep(1000);
-                Papamo.Attack(Mamamo);
+                sino.Attack(mamamo);
                 Thread.Sleep(1000);
                 Console.WriteLine("------------------------------------");
 
