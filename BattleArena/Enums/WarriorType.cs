@@ -11,6 +11,7 @@ namespace BattleArena.Enums
         Fighter,
         Marksman,
         Tank,
-        Mage,
+        Magery,
+        Assasin
     }
 }

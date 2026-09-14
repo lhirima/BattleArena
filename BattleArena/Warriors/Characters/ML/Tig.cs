@@ -6,11 +6,11 @@ using BattleArena.Abilities;
 
 namespace BattleArena.Warriors.Characters
 {
-    public class AA : Warrior, IDefender
+    public class Tig : Warrior, IDefender
     {
         public int Shield { get; set; }
-        public AA(int health, int attackPower, int shield, int speed, TeamType teamType)
-            : base("AA", health, attackPower, speed, WarriorType.Tank, teamType)
+        public Tig(int health, int attackPower, int shield, int speed, TeamType teamType)
+            : base("Tig", health, attackPower, speed, WarriorType.Tank, teamType)
         {
             Shield = shield;
             attackPower += shield;
@@ -18,14 +18,16 @@ namespace BattleArena.Warriors.Characters
         public override void Attack(Warrior target)
         {
             var dmginfo = new DamageInfo(AttackPower, "Shield", HasCriticalChance, this);
-            Console.WriteLine($"\t->{Name}: Take it! {target.Name}");
+            TakeDamage(dmginfo);
+
+            Console.WriteLine($"\t->{Name}: Protect u {target.Name}!");
             Thread.Sleep(1000);
 
-            Console.WriteLine($"\t->{target.Name}: hsshshshs");
+            Console.WriteLine($"\t->{target.Name}: ay");
             Thread.Sleep(1000);
 
             if (target.IsAlive)
-                Console.WriteLine($"\t->{target.Name}: {Name} uh???? {target.Name}");
+                Console.WriteLine($"\t->{Name}: yessssss {target.Name}");
 
             Thread.Sleep(1000);
             Console.WriteLine($"\t->* Damange Taken: {target}");

@@ -13,27 +13,35 @@ namespace BattleArena
     {
         static void Main(string[] args)
         {
-            var AA = new AA(100, 30, 10, 5, TeamType.A);
-            var BB = new BB("BB", 200, 15, 20, TeamType.B, 8);
-            var CC = new CC(150, 20, 15, 7, TeamType.A);
+            // Ori-
+            var AA = new AA(100, 30, 25, 10, TeamType.A);
+            var BB = new BB(150, 20, 15, 10, TeamType.A);
+            var CC = new CC(100, 10, 15, 30, TeamType.A);
+            var DD = new DD(120, 15, 10, 20, TeamType.A);
+            var EE = new EE(100, 20, 15, 10, TeamType.A);
 
-            AA.DisplayStatus();
-            BB.DisplayStatus();
-            CC.DisplayStatus();
+            // ginal
+            var Alu = new Alu(120, 15, 10, 30, TeamType.B);
+            var Lance = new Lance(100, 20, 15, 10, TeamType.B);
+            var Layla = new Layla(150, 10, 20, 15, TeamType.B);
+            var Nani = new Nani(100, 15, 10, 20, TeamType.B);
+            var Tig = new Tig(120, 10, 15, 30, TeamType.B);
 
-            while (AA.IsAlive && BB.IsAlive)
-            {
-                Console.WriteLine("\n\n=================================================");
-                AA.Attack(BB);
-                BB.DisplayStatus();
-                Console.WriteLine("-------------------------------------------------");
-                Thread.Sleep(2000);
-                BB.Attack(AA);
-                AA .DisplayStatus();
-                Thread.Sleep(2000);
-            }
 
-            Console.ReadKey();
+            BattleArena.AddWarrior(AA);
+            BattleArena.AddWarrior(BB);
+            BattleArena.AddWarrior(CC);
+            BattleArena.AddWarrior(DD);
+            BattleArena.AddWarrior(EE);
+
+            BattleArena.AddWarrior(Alu);
+            BattleArena.AddWarrior(Lance);
+            BattleArena.AddWarrior(Layla);
+            BattleArena.AddWarrior(Nani);
+            BattleArena.AddWarrior(Tig);
+
+
+            BattleArena.StartBattle();
         }
     }
 }
