@@ -26,6 +26,7 @@ namespace BattleArena.Warriors.Characters
         public override void Attack(Warrior target)
         {
             var dmginfo = new DamageInfo(AttackPower, "Punch", HasCriticalChance, this);
+            // Apply damage to the target (not to self)
             TakeDamage(dmginfo);
 
             Console.WriteLine($"\t->{Name}: Take a hit from {target.Name}!");
@@ -35,11 +36,7 @@ namespace BattleArena.Warriors.Characters
             Thread.Sleep(1000);
 
             if (target.IsAlive)
-                Console.WriteLine($"\t->{Name}: argh!{target.Name}");
-
-            Thread.Sleep(1000);
-            Console.WriteLine($"\t->* Damage Taken: {target}");
-            Console.WriteLine($"\t->* Health Remaining: {target.Health}");
+                Console.WriteLine($"\t->{Name}: Argh! {target.Name}!");
 
         }
 

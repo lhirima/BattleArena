@@ -18,7 +18,7 @@ namespace BattleArena.Warriors.Characters
         public override void Attack(Warrior target)
         {
             var dmginfo = new DamageInfo(AttackPower, "Slash", HasCriticalChance, this);
-            TakeDamage(dmginfo);
+            
 
             Console.WriteLine($"->{Name}: Aha aha {target.Name}!");
 

@@ -27,9 +27,7 @@ namespace BattleArena.Warriors.Characters
             if (target.IsAlive)
                 Console.WriteLine($"\t->{Name}: ih {target.Name}");
 
-            Thread.Sleep(1000);
-            Console.WriteLine($"\t->* Damage Taken: {target}");
-            Console.WriteLine($"\t->* Health Remaining: {target.Health}");
+           
 
         }
 
